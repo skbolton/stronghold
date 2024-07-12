@@ -43,7 +43,7 @@ defmodule Hold.Zipper.List do
     |> Enum.concat(right)
   end
 
-  @spec right(t()) :: {:ok, t()} | invalid_move()
+  @spec right(t()) :: {:ok, t()} | Hold.Zipper.invalid_move()
   @doc """
   Move focus right, if possible.
 
@@ -81,7 +81,7 @@ defmodule Hold.Zipper.List do
   def right?({_left, [_focus]}), do: false
   def right?({_left, [_focus | _rest]}), do: true
 
-  @spec left(t()) :: {:ok, t()} | invalid_move()
+  @spec left(t()) :: {:ok, t()} | Hold.Zipper.invalid_move()
   @doc """
   Move focus left, if possible.
 
