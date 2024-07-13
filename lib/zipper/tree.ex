@@ -115,8 +115,8 @@ defmodule Hold.Zipper.Tree do
   1 
   ```
   """
-  def focus({_thread, zlist}) do
-    {value, _children} = ZList.focus(zlist)
+  def focus({_thread, level}) do
+    {value, _children} = ZList.focus(level)
     value
   end
 
@@ -310,11 +310,11 @@ defmodule Hold.Zipper.Tree do
   1
   ```
   """
-  def left({thread, {[new_focus | rest_left], right}}) do
-    {:ok, {thread, {rest_left, [new_focus | right]}}}
+  def left({thread, level}) do
+    with {:ok, new_level} <- ZList.left(level) do
+      {:ok, {thread, new_level}}
+    end
   end
-
-  def left({_thread, {[], _right}}), do: {:error, :invalid_move}
 
   @spec left!(t()) :: t()
   @doc """
@@ -372,10 +372,10 @@ defmodule Hold.Zipper.Tree do
   2
   ```
   """
-  def right({_thread, {_left, [_current | []]}}), do: {:error, :invalid_move}
-
-  def right({thread, {left, [old_focus | rest_right]}}) do
-    {:ok, {thread, {[old_focus | left], rest_right}}}
+  def right({thread, level}) do
+    with {:ok, new_level} <- ZList.right(level) do
+      {:ok, {thread, new_level}}
+    end
   end
 
   @spec right!(t()) :: t()
