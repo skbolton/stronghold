@@ -186,6 +186,7 @@ defmodule Hold.Zipper.List do
   iex> zipper = Hold.Zipper.List.last(zipper)
   iex> Hold.Zipper.List.focus(zipper)
   5
+  ```
   """
   def last(zipper) do
     case right(zipper) do

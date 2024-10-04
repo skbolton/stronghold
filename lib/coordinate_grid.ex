@@ -5,18 +5,18 @@ defmodule Hold.CoordinateGrid do
   alias Hold.Coordinate
 
   @typedoc """
-  User provided value being stored at `t:Hold.Corrdinate.t()` in `t:grid`.
+  User provided value being stored at `t:Hold.Corrdinate.t/0` in grid.
   """
   @type value :: term()
 
   @typedoc """
-  A representation of a valid `t:Hold.Coordinate.t` in `t` and `t:value` it is
+  A representation of a valid `t:Hold.Coordinate.t/` in `grid` and `t:value/0` it is
   holding.
   """
   @type cell :: nil | {Coordinate.t(), value()}
 
   @typedoc """
-  Representation of item at a `t:Hold.Coordinate.t` in `t`.
+  Representation of item at a `t:Hold.Coordinate.t/0` in `t:t/0`.
   """
   @opaque member(a) :: {:value, a} | nil
   @opaque member :: {:value, value()} | nil
