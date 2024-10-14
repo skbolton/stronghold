@@ -1,11 +1,14 @@
 # Hold
 
-**TODO: Add description**
+Stephen's smattering of functional data structures
+
+> [!CAUTION]
+> This is mostly for me to experiment with functional data structures and have my own lib to pull in
+> There could come a time where I work to make this more battle tested, but that time is *NOT* now.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `hold` to your list of dependencies in `mix.exs`:
+Add stronghold to your dependencies. Note package name and hex name are different.
 
 ```elixir
 def deps do
@@ -15,9 +18,7 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/hold>.
+Documentation is available [here](https://hexdocs.pm/stronghold)
 
 ## Acknowledgements
 
